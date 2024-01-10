@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <script>
+var str=" ";
+    function username()
+    {
+            var val=document.getElementById("name").value;
+            var b=/^[A-Z ,a-z]+$/;
+            if(val==="")
+            {
+                document.getElementById("a").innerHTML=" enter values";
+            }
+         else   if(!val.match (b))
+            {
+                document.getElementById("a").innerHTML=" enter alphabets only";
+
+            }
+            
+            else if(val.length>6)
+            {
+                document.getElementById("a").innerHTML="ENTER MINIUM LENGTH";
+            }
+            else{
+                document.getElementById("a").innerHTML=" ";
+          str+="a";
+    }
+}
+ function pass()
+ {
+    var kk=document.getElementById("name1").value;
+    var k=/^[a-z A-z @ #]+$/;
+    if(!kk.match(k))
+    {
+        document.getElementById("p1").innerHTML="enter strong password";
+
+    }
+    else if(kk=="")
+    {
+        document.getElementById("p1").innerHTML="enter pass";
+    }
+    else if(kk.length>6)
+    {
+        document.getElementById("p1").innerHTML="min length";
+    }
+    else{
+        document.getElementById("p1").innerHTML=" ";
+        str+="b";
+    }
+ }
+
+function check()
+{
+    var cc=document.getElementById("name3").value;
+    var c=/^[a-z A-Z . @ 0-9]+$/;
+    if(!cc.match(c))
+    {
+        document.getElementById("a3").innerHTML="enter alphabets";
+    }
+    else if(cc==="")
+    {
+        document.getElementById("a3").innerHTML="ENTER mail";
+    }
+    else if(cc.length>6)
+    {
+        document.getElementById("a3").innerHTML="minimum length";
+    }
+    else{
+        document.getElementById("a3").innerHTML=" ";
+        str+="c";
+       
+}
+}
+    function valid1()
+    {
+       var qq= document.getElementById("name2").value;
+        var q=/^[0-9]+$/;
+        if(qq===""){
+            document.getElementById("a2").innerHTML="enter";
+
+        }
+       else if(!qq.match(q))
+        {
+            document.getElementById("a2").innerHTML="enter numbers";
+        }
+        
+       else if(qq.length==10)
+        {
+            document.getElementById("a2").innerHTML="ok";
+            
+            
+        }
+        
+        else 
+        {
+            document.getElementById("a2").innerHTML="enter  10 digi";
+          str+="d";
+       
+        }
+        
+
+        
+        
+    }
+    function pass2()
+{
+    var pw1=document.getElementById("name1").value;
+    var pw2=document.getElementById("name11").value;
+    if(pw1==pw2)
+    {
+        document.getElementById("a1").innerHTML="done";
+    }
+    else{
+        document.getElementById("a1").innerHTML=" not done";
+       str+="e";
+    }
+}
+
+ function done ()
+{
+
+if(str.includes("a")&&str.includes("b")&&str.includes("c")&&str.includes("d")&&str.includes("e"))
+{
+   // document.getElementById("done").innerHTML="sucessful";
+window.alert(" done");
+}
+else 
+{
+    //document.getElementById("done").innerHTML="unsucessful";
+   window. alert(" not done");
+    
+}
+}
+
+
+
+</script>
+
+    <center>
+        <table>
+            <tr>
+                <td>name:</td>
+                <td><input type="text" placeholder="enter name" id="name" onblur="username()"></td>
+                <td><p id="a"></p></td>
+                </tr>
+            <tr><td>password</td><td><input type="text" placeholder="enter password" id="name1" onblur="pass()"></td><td><p id="p1"></p></td></tr>
+            <tr><td>conformpassward</td><td><input type="passward" placeholder="conformpassword" id="name11" onblur="pass2()"></td><td><p id="a1"></p></td></tr>
+            <tr><td>Dof</td><td><input type="date"></td></tr>
+            <tr><td>gender</td>
+                <td>male<input type="radio" name="gender"></td>
+                <td>female<input type="radio" name="gender"> </td>
+                <tr><td>course</td>
+                <td>cse<input type="checkbox"></td>
+                <td>ece<input type="checkbox"></td>
+                <td>mech<input type="checkbox"></td>
+                </tr>
+                <tr><td>email</td><td><input type="text" id="name3" onblur="check()"></td><td><p id="a3"></p></td></tr>
+                <tr><td>phonenumber</td>  <td><input type="text" id="name2" placeholder="enter number" onblur="valid1()"></td><td><p id="a2"></p></td></tr>
+      <tr><td></td><td><input type="button" value="submit" onclick="done()"></td></tr>
+                    
+        </table>
+    </center>
+</body>
+</html> 
